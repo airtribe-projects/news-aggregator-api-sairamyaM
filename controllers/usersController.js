@@ -32,7 +32,7 @@ const registerUser = async (user) => {
 
 const loginUser = async (email, password) => {
 
-  const dbUser = await usersModel.findOne({ email });
+  const dbUser = await usersModel.findOne({ email: email.toLowerCase() });
 
   if (!dbUser) {
     throw new Error("User not found. Please sign up first.");

@@ -17,10 +17,10 @@ app.use('/', newsRoute);
 app.get('/', (req, res) => res.send('Server running'));
 
 mongoose.connect(process.env.MONGODB_URI)
-  .then(() => console.log('✅ Connected to MongoDB'))
-  .catch(err => console.log('❌ MongoDB connection failed:', err));
+  .then(() => console.log(' Connected to MongoDB'))
+  .catch(err => console.log(' MongoDB connection failed:', err));
 
-app.listen(port, () => {
+app.listen(port, (err) => {
    if (err) {
         return console.log('Something bad happened', err);
     }

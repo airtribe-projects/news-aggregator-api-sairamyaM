@@ -2,24 +2,24 @@ const mongoose = require('mongoose');
 
 const usersSchema = new mongoose.Schema({
     name: {
-        type: 'String',
+        type: String,
         required: true, 
         trim: true
     }, 
     email: {
-        type: 'String',
+        type: String,
         required: true,
         trim:true, 
         unique: true
     }, 
     password: {
-        type: 'String', 
+        type: String, 
         required: true
     }, 
     preferences: {
-        type: ['String'], 
+        type: [String], 
         enum: ['movies', 'comics'],
-        default: 'movies'
+        default: ['movies']
     }
 })
 
